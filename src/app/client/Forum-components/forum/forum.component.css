@@ -1,0 +1,137 @@
+.delete-button {
+  color: white;
+  font-weight: bold;
+  background-color: #2CA8FF;
+  border-color: #2CA8FF;
+}
+.delete-button:hover {
+  background-color: red;
+  border-color: red;
+}
+.delete-button i {
+  color: white;
+  margin-right: 2px;
+}
+.up-button {
+  color: white;
+  font-weight: bold;
+  background-color: #2CA8FF;
+  border-color: #2CA8FF;
+}
+.up-button:hover {
+  background-color: orange;
+  border-color: orange;
+}
+.up-button i {
+  color: white;
+  margin-right: 2px;
+}
+
+.btn-react {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: #2CA8FF;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg-react {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn-react:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn-react:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn-react span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  padding: 20px;
+  position: relative; /* Add this line for positioning */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional: Style the close button icon */
+.close-button i {
+  font-size: 20px;
+  color: #000;
+}
+
+
+.center-image {
+  display: block;
+  margin: 0 auto;
+}
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.arrow-button:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow-button.left {
+  left: 1rem;
+}
+
+.arrow-button.right {
+  right: 1rem;
+}
+
+
+
+

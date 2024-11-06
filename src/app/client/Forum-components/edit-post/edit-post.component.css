@@ -1,0 +1,746 @@
+/* CSS code pour définir logo */
+.icon-image {
+  width: 45px; /* Largeur souhaitée de l'image en pixels */
+  height: 45px; /* Hauteur souhaitée de l'image en pixels */
+}
+.bg-gray {
+  background-color: #f0f2f5;
+}
+.fs-0 {
+  font-size: 4rem;
+}
+.fs-7 {
+  font-size: 0.8rem;
+}
+/* nav button */
+.nav__btn button:hover {
+  background: #f0f2f5 !important;
+}
+.nav__btn button:hover i {
+  color: #0d6efd !important;
+}
+.nav__btn-active i {
+  color: #0d6efd !important;
+}
+.nav__btn-active {
+  position: relative;
+}
+.nav__btn-active:before {
+  content: "";
+  position: absolute;
+  bottom: -4.5px;
+  left: 0;
+  transform: translate(0, 4.5px);
+  width: 100%;
+  height: 3px;
+  border-bottom: 3px solid #0d6efd !important;
+}
+/* dropdown */
+.dropdown-item:active {
+  background-color: #d5d5d5 !important;
+}
+/* chat box */
+.modal-content:hover .fa-phone-alt {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-video {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-file-image {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-plus-circle {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-portrait {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-adjust {
+  color: #0d6efd !important;
+}
+.modal-content:hover .fa-thumbs-up {
+  color: #0d6efd !important;
+}
+/* edit */
+.edit-button {
+  opacity: 0;
+}
+.edit-button:hover {
+  opacity: 1;
+}
+.edit-heading:hover .edit-button {
+  opacity: 1;
+}
+/* scrollbar */
+.scrollbar:hover {
+  overflow: auto !important;
+}
+/* sponsor */
+.sponsor-icon {
+  opacity: 0;
+}
+.dropdown-item:hover .sponsor-icon {
+  opacity: 1;
+}
+/* popover */
+.pop-avatar {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.chat-box {
+  border: 0 !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* stories */
+.story:hover {
+  opacity: 0.8;
+}
+.pointer {
+  cursor: pointer;
+}
+/* comment */
+.post__comment .accordion-button::after {
+  margin-left: 0 !important;
+  display: none !important;
+}
+.post__comment .accordion-button:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.post__comment .accordion-button:not(.collapsed) {
+  background: transparent !important;
+}
+.post__comment .accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+@media (min-width: 62em) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+/* Reset des marges et des paddings */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+/* Conteneur de la carte de profil */
+.profile-card {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+/* Photo de profil ronde */
+.profile-card .profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.profile-card .profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Informations personnelles */
+.profile-card .profile-info {
+  text-align: center;
+  margin-top: 20px;
+}
+.profile-card .profile-info h2 {
+  margin: 0;
+}
+.profile-card .profile-info p {
+  margin: 0;
+  color: #777777;
+}
+/* Arrière-plan presque transparent */
+.profile-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}
+/* Conteneur du post */
+.post-container {
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  position: relative;
+}
+/* Photo de profil ronde */
+.post-container .profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.post-container .profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Nom et prénom en petit en haut à gauche */
+.post-container .profile-info {
+  position: absolute;
+  top: 15px;
+  left: 70px;
+  font-size: 12px;
+  color: #777777;
+}
+/* Date de création avec icône de calendrier */
+.post-container .post-date {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 12px;
+  color: #777777;
+}
+.post-container .post-date i {
+  margin-right: 5px;
+}
+/* Titre et corps du post */
+.post-container .post-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+.post-container .post-body {
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* Conteneur des images */
+.post-container .post-images {
+  margin-top: 20px;
+}
+/* Images */
+.post-container .post-images img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+/* Icône "+" pour les images supplémentaires */
+.post-container .post-images .more-images {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #f3f3f3;
+  color: #777777;
+  font-size: 36px;
+}
+.post-container .post-images .more-images i {
+  margin-right: 0;
+}
+.right-sidebar {
+  /* Style pour la partie droite de la page */
+}
+
+.users-container,
+.chatrooms-container {
+  /* Style pour les conteneurs d'utilisateurs et de chatrooms */
+}
+
+.user-list,
+.chatroom-list {
+  /* Style pour les listes d'utilisateurs et de chatrooms */
+}
+
+.user-profile,
+.chatroom-profile {
+  /* Style pour les profils d'utilisateurs et de chatrooms */
+}
+
+.profile-picture {
+  /* Style pour les photos de profil rondes */
+}
+
+.user-info,
+.chatroom-name {
+  /* Style pour les informations d'utilisateur et les noms de chatroom */
+}
+
+.online-status {
+  /* Style pour les indicateurs de statut de connexion (point vert) */
+}
+
+.user-search,
+.chatroom-search {
+  /* Style pour les barres de recherche d'utilisateurs et de chatrooms */
+}
+.ma-div {
+  float: right;
+}
+
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+nav{
+  height:70px;
+  width:100%;
+  padding: 0 2rem;
+  display:flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px #ccc;
+  position:sticky;
+  top:0;
+  z-index:99;
+}
+
+nav .nav-left, nav .nav-right{
+  display:flex;
+  align-items: center;
+}
+
+nav .nav-left > img{
+  width:40px;
+}
+
+nav .nav-left > input{
+  height:40px;
+  padding:5px 10px;
+  border:none;
+  border-radius: 25px;
+  outline:none;
+  background-color: #eee;
+  margin-left: 10px;
+}
+
+nav .nav-middle{
+  display:flex;
+  align-items:flex-end;
+  padding-bottom: 5px;
+}
+
+nav .nav-middle a{
+  text-decoration: none;
+  color:#333;
+  padding:10px;
+  margin:0px 10px;
+}
+
+nav .nav-middle a.active{
+  color:royalblue;
+  position:relative;
+}
+
+nav .nav-middle a.active::after{
+  content:'';
+  width:100%;
+  height:3px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background:royalblue;
+}
+
+nav .nav-middle a > i{
+  font-size: 25px;
+}
+
+nav .nav-right .profile, .container .left-panel .profile{
+  height:30px;
+  width:30px;
+  background-size: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+nav .nav-right a{
+  text-decoration: none;
+  color:#333;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  background:#eee;
+  display:grid;
+  place-items: center;
+  margin-left:1rem;
+}
+
+nav .nav-right a > i{
+  font-size:18px;
+}
+
+
+.container{
+  background:#eee;
+  display:flex;
+}
+
+.container .left-panel, .container .right-panel{
+  position: sticky;
+  top:70px;
+  width:250px;
+  height:calc(100vh - 70px);
+}
+
+.container .left-panel ul{
+  padding:10px 0px;
+}
+
+.container .left-panel ul li{
+  list-style: none;
+  display: flex;
+  padding:.7rem 1rem;
+  align-items: center;
+  transition: .3s;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container .left-panel ul li:hover{
+  background:#ddd;
+}
+
+.container .left-panel ul li > p{
+  margin-left: 10px;
+}
+
+.container .left-panel ul li > i{
+  font-size:20px;
+  color:slateblue;
+}
+
+.container .left-panel ul li > i.fa-calendar-week{
+  color:tomato;
+}
+
+.container .left-panel ul li i.fa-briefcase{
+  color:green;
+}
+
+.container .left-panel ul li i.fa-star{
+  color:yellowgreen;
+}
+
+.container .left-panel ul li i.fa-hands-helping{
+  color:indianred;
+}
+
+.container .left-panel .footer-links{
+  padding:5px 1rem;
+}
+
+.container .left-panel .footer-links a{
+  text-decoration: none;
+  color:#333;
+  font-size:12px;
+}
+
+.middle-panel{
+  flex:1;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.middle-panel .story-section{
+  display:flex;
+  padding:1rem;
+}
+
+.middle-panel .story-section .story{
+  width:120px;
+  height:200px;
+  border-radius: 10px;
+  position: relative;
+  overflow:hidden;
+  cursor: pointer;
+  margin:0px 5px;
+  box-shadow: 0 0 5px 5px #ddd;
+  background:#fff;
+}
+
+.middle-panel .story-section .story > img{
+  height:100%;
+  transition:.3s ease-in;
+}
+
+.middle-panel .story-section .story:hover > img{
+  transform:scale(1.05);
+}
+
+.middle-panel .story-section .story .dp-container{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  overflow:hidden;
+  position:absolute;
+  top:10px;
+  left:10px;
+  border:royalblue 4px solid;
+}
+
+.middle-panel .story-section .story .dp-container > img{
+  width:100%;
+  height:100%;
+}
+
+.middle-panel .story-section .story .name{
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  padding:5px;
+  color:#fff;
+  font-weight:bold;
+}
+
+.middle-panel .story-section .story.create .dp-image{
+  height:80%;
+  overflow:hidden;
+}
+
+.middle-panel .story-section .story.create .dp-image img{
+  width:100%;
+}
+
+.middle-panel .story-section .story.create .dp-container{
+  top:70%;
+  left:50%;
+  transform: translateX(-50%);
+  display:grid;
+  place-items: center;
+  background:royalblue;
+  border:4px solid #fff;
+}
+
+.middle-panel .story-section .story.create .dp-container i{
+  color: #fff;
+}
+
+.middle-panel .story-section .story.create .name{
+  color: #000;
+  font-size:15px;
+  left:10px;
+}
+
+.post{
+  width:550px;
+  background:#fff;
+  border-radius:10px;
+  padding:10px;
+  margin:10px;
+}
+
+.post .post-top{
+  display:flex;
+  align-items: center;
+  padding:10px;
+}
+
+.post .post-top .dp{
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  overflow:hidden;
+}
+
+.post .post-top .dp > img{
+  width:100%;
+  cursor:pointer;
+}
+
+.post .post-top .post-info{
+  margin-left:10px;
+  font-weight: bold;
+}
+
+.post .post-top .post-info .name{
+  cursor:pointer;
+  font-size:16px;
+}
+
+.post .post-top .post-info .time{
+  font-size:12px;
+  cursor:pointer;
+}
+
+.post .post-top i{
+  margin-left:auto;
+  cursor: pointer;
+}
+
+.post .post-top > input{
+  height:40px;
+  padding:5px 10px;
+  border-radius:25px;
+  outline:none;
+  border:none;
+  flex:1;
+  background:#eee;
+  margin-left:10px;
+}
+
+.post .post-content{
+  font-size:16px;
+  font-weight:normal;
+  padding:10px;
+}
+
+.post .post-content > img{
+  width:100%;
+  margin:5px 0px;
+}
+
+.post .post-bottom{
+  display:flex;
+  justify-content: space-between;
+  padding:5px 5px 0px 5px;
+}
+
+.post .post-bottom .action{
+  padding:10px;
+  border-radius:10px;
+  transition: .3s ease-in;
+  cursor: pointer;
+}
+
+.post .post-bottom .action:hover{
+  background:#eee;
+}
+
+.post.create .post-bottom > .action{
+  color:#d74;
+}
+
+.container .right-panel{
+  padding:1rem;
+}
+
+.right-panel .pages-section,
+.right-panel .friends-section{
+  margin:1rem 0px;
+}
+
+.right-panel .pages-section h4,
+.right-panel .friends-section h4{
+  margin-bottom:10px;
+}
+
+.right-panel .pages-section .page,
+.right-panel .friends-section .friend{
+  display: flex;
+  align-items:center;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+  border-radius: 5px;
+  padding:7px 10px;
+  color:#333;
+}
+
+.right-panel .pages-section .page:hover,
+.right-panel .friends-section .friend:hover{
+  background:#ddd;
+}
+
+.right-panel .pages-section .page > .dp,
+.right-panel .friends-section .friend > .dp{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  overflow:hidden;
+  cursor: pointer;
+}
+
+.right-panel .pages-section .page > .dp > img,
+.right-panel .friends-section .friend > .dp > img{
+  width:100%;
+}
+
+.right-panel .pages-section .name, .right-panel .friends-section .name{
+  font-size:18px;
+  cursor:pointer;
+  margin-left:8px;
+}
+
+
+.comment-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #2196F3; /* Couleur bleue pour le fond du bouton */
+  color: #FFFFFF; /* Couleur blanche pour le texte du bouton */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.comment-button i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.comment-button i.fa-comment {
+  color: #FFFFFF;
+}
+
+.comment-button:hover {
+  background-color: #1976D2;
+}
+.delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #2196F3; /* Couleur rouge pour le fond du bouton */
+  color: #FFFFFF; /* Couleur blanche pour le texte du bouton */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Taille de police du bouton */
+}
+
+.delete-button i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+/* Style de l'icône de suppression */
+.delete-button i.fa-trash {
+  color: #FFFFFF; /* Couleur blanche pour l'icône de suppression */
+}
+
+/* Effet de survol du bouton */
+.delete-button:hover {
+  background-color: #FF3333; /* Couleur rouge vive pour le fond du bouton au survol */
+}
+

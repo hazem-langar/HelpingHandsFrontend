@@ -1,0 +1,80 @@
+
+<button class="btn  btn-info btn-icon btn-round " type="button" style="position: fixed;
+bottom: 20px; right: 20px;font-size: 1.5rem;width: 60px;height: 60px;"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModalChat">
+  <i class="now-ui-icons ui-2_chat-round"></i>
+</button>
+
+<div style="padding-left: 30%;" class="modal fade justify-content-center" id="exampleModalChat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+>
+  <div class="modal-dialog bg-info" role="document">
+
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header  align-items-center bg-info">
+
+          <div style="padding-bottom: 10%" class="title text-white bg-info">HelpingHands</div>
+          <hr>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="card max-height-vh-80 ">
+
+
+     <div class="modal-body overflow-auto overflow-x-hidden" style="height: 600px">
+
+            <ng-container *ngFor="let message of chatService.messages" >
+
+              <div class="row justify-content-start mb-4">
+                <div class="col-auto">
+                  <div class="card ">
+                    <div class="card-body p-2">
+                      <p class="mb-1">  :
+
+                      </p>
+                      <div class="d-flex align-items-center text-sm opacity-6">
+                        <i class="material-icons text-sm me-1">schedule</i>
+                        <small>3:14am</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-end text-right mb-4"   style="">
+                <div class="col-auto" >
+                  <div class="card bg-gradient-primary ">
+                    <div class="card-body p-2" >
+                      <p class="mb-1">
+                       <br>
+                      </p>
+                      <div class="d-flex align-items-center justify-content-end text-sm opacity-6">
+                        <i class="material-icons text-sm me-1">done_all</i>
+                        <small>4:42pm</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+
+          <div class="card-footer d-block">
+            <form class="align-items-center">
+              <div class="input-group input-group-outline d-flex">
+                <label class="form-label">Type your message</label>
+                <input type="text" name="messages" class="form-control form-control-lg"  >
+                <button class="btn bg-gradient-primary mb-0" >
+                  <i class="material-icons">send</i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,62 @@
+<!-- create comment -->
+<form class="d-flex my-1">
+  <!-- avatar -->
+  <div>
+    <img
+      src=""
+      alt="avatar"
+      class="rounded-circle me-2"
+      style="
+                                  width: 38px;
+                                  height: 38px;
+                                  object-fit: cover;
+                                "
+    />
+  </div>
+  <!-- input -->
+  <input
+    type="text"
+    class="form-control border-0 rounded-pill bg-gray pointer"
+    placeholder="Write a comment"
+    style="background-color: #e7e7ea"
+    disabled
+    data-bs-toggle="modal"
+    data-bs-target="#createComment"
+  />
+  <!-- create modal -->
+  <div class="modal fade" id="createComment" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true" data-bs-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- head -->
+        <div class="modal-header align-items-center">
+          <h5 class="text-dark text-center w-100 m-0" id="exampleModalLabel">Add Comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- body -->
+        <div class="modal-body" >
+          <form [formGroup]="commentForm">
+            <div class="my-1 p-1">
+              <div class="d-flex flex-column">
+                <!-- text -->
+
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Comment Body</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add Comment" rows="3" formControlName="commentBody" required></textarea>
+                </div>
+        <!--        <div class="mb-3">
+                  <label for="image" class="form-label">comment Images</label>
+                  <input type="file" class="form-control-file" id="image" >
+                </div> -->
+              </div>
+            </div>
+            <!-- footer -->
+            <div class="modal-footer">
+              <button class="btn btn-info btn-round btn-lg" type="submit" >Add comment</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

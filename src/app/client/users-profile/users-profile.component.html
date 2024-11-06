@@ -1,0 +1,791 @@
+<!--main id="main" class="main">
+ <table>
+    <thead>
+      <tr>
+        <th>Friend List</th>
+        <th>Suggested Friends</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let friend of friendList; let i = index">
+        <td>{{ friend.username }}</td>
+        <td>{{ friendSuggestionList[i].username }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+   </main-->
+   <main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Profile</h1>
+       <nav>
+          <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a routerLink="/client">Home</a></li>
+             <li class="breadcrumb-item">Users</li>
+             <li class="breadcrumb-item active">Profile</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section profile">
+       <div class="row">
+          <div class="col-xl-4">
+             <div class="card">
+                <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                   <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                   <h2>{{currentUser.username}}</h2>
+                   <h3>Web Designer</h3>
+                   <div class="social-links mt-2"> <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a></div>
+                </div>
+             </div>
+          </div>
+          <div class="col-xl-8">
+             <div class="card">
+                <div class="card-body pt-3">
+                   <ul class="nav nav-tabs nav-tabs-bordered">
+                      <li class="nav-item"> <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button></li>
+                      <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button></li>
+                      <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button></li>
+                      <li class="nav-item"> <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button></li>
+                   </ul>
+                   <div class="tab-content pt-2">
+                      <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                         <h5 class="card-title">About</h5>
+                         <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
+                         <h5 class="card-title">Profile Details</h5>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                            <div class="col-lg-9 col-md-8">{{currentUser.username}}</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Company</div>
+                            <div class="col-lg-9 col-md-8">esprit</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Job</div>
+                            <div class="col-lg-9 col-md-8">Web Designer</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Country</div>
+                            <div class="col-lg-9 col-md-8">USA</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Address</div>
+                            <div class="col-lg-9 col-md-8">ghazela, ariana, Tunisia</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Phone</div>
+                            <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                         </div>
+                         <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Email</div>
+                            <div class="col-lg-9 col-md-8">{{currentUser.email}}</div>
+                         </div>
+                      </div>
+                      <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                         <form>
+                            <div class="row mb-3">
+                               <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                               <div class="col-md-8 col-lg-9">
+                                  <img src="assets/img/profile-img.jpg" alt="Profile">
+                                  <div class="pt-2"> <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a></div>
+                               </div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                               <div class="col-md-8 col-lg-9"> <input name="fullName" type="text" class="form-control" id="fullName" value="Jassa"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                               <div class="col-md-8 col-lg-9"><textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
+                               <div class="col-md-8 col-lg-9"> <input name="company" type="text" class="form-control" id="company" value="Therichpost"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
+                               <div class="col-md-8 col-lg-9"> <input name="job" type="text" class="form-control" id="Job" value="Web Designer"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                               <div class="col-md-8 col-lg-9"> <input name="country" type="text" class="form-control" id="Country" value="USA"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                               <div class="col-md-8 col-lg-9"> <input name="address" type="text" class="form-control" id="Address" value="Ludhiana, Punjab, India"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                               <div class="col-md-8 col-lg-9"> <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                               <div class="col-md-8 col-lg-9"> <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
+                               <div class="col-md-8 col-lg-9"> <input name="twitter" type="text" class="form-control" id="Twitter" value="https://twitter.com/#"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
+                               <div class="col-md-8 col-lg-9"> <input name="facebook" type="text" class="form-control" id="Facebook" value="https://facebook.com/#"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
+                               <div class="col-md-8 col-lg-9"> <input name="instagram" type="text" class="form-control" id="Instagram" value="https://instagram.com/#"></div>
+                            </div>
+                            <div class="row mb-3">
+                               <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
+                               <div class="col-md-8 col-lg-9"> <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#"></div>
+                            </div>
+                            <div class="text-center"> <button type="submit" class="btn btn-primary">Save Changes</button></div>
+                         </form>
+                      </div>
+                      <div class="tab-pane fade pt-3" id="profile-settings">
+                         <form>
+                            <div class="row mb-3">
+                               <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
+                               <div class="col-md-8 col-lg-9">
+                                  <div class="form-check"> <input class="form-check-input" type="checkbox" id="changesMade" checked> <label class="form-check-label" for="changesMade"> Changes made to your account </label></div>
+                                  <div class="form-check"> <input class="form-check-input" type="checkbox" id="newProducts" checked> <label class="form-check-label" for="newProducts"> Information on new products and services </label></div>
+                                  <div class="form-check"> <input class="form-check-input" type="checkbox" id="proOffers"> <label class="form-check-label" for="proOffers"> Marketing and promo offers </label></div>
+                                  <div class="form-check"> <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled> <label class="form-check-label" for="securityNotify"> Security alerts </label></div>
+                               </div>
+                            </div>
+                            <div class="text-center"> <button type="submit" class="btn btn-primary">Save Changes</button></div>
+                         </form>
+                      </div>
+                      <div class="tab-pane fade pt-3" id="profile-change-password">
+                         <form role="form" #f="ngForm" (ngSubmit)="f.form.valid && updatePassword()">
+                                            <div class="alert alert-danger alert-dismissible text-white fade show" role="alert" *ngIf="errorMessage">
+                                                <strong>{{errorMessage}}</strong>
+                                                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>New Password</label>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="New Password" [(ngModel)]="password" required>
+                                            </div>
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword" required>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">Reset</button>
+                                            </div>
+                                        </form>
+                      </div>
+                      <!--div class="container mb-4">
+                        <div class="row mt-lg-n12 mt-md-n12 mt-n12 justify-content-center">
+                            <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                                <div class="card mt-8">
+                                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                        <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1 text-center py-4">
+                                            <h3 class="font-weight-bolder text-white">Reset Password</h3>
+                                            <p class="mb-0 text-sm text-white">Choose a new password for your account</p>
+                                            <p class="mb-0 text-sm text-white">This link will expire after some time</p>
+                                        </div>
+                                    </div>
+                                    <div class="card-body py-4">
+                                        <form role="form" #f="ngForm" (ngSubmit)="f.form.valid && updatePassword()">
+                                            <div class="alert alert-danger alert-dismissible text-white fade show" role="alert" *ngIf="errorMessage">
+                                                <strong>{{errorMessage}}</strong>
+                                                <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>New Password</label>
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="New Password" [(ngModel)]="password" required>
+                                            </div>
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>Confirm Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" [(ngModel)]="confirmPassword" required>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn bg-gradient-primary w-100 mt-4 mb-0">Reset</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div-->
+                    
+                    
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+      
+          
+    </section>
+    
+    
+
+<!-- -------- START HEADER 4 w/ search book a ticket form ------- -->
+<!--header>
+    <div class="page-header min-height-400" style="background-image: url('../assets/img/city-profile.jpg');" loading="lazy">
+        <span class="mask bg-gradient-dark opacity-8"></span>
+    </div>
+</header-->
+<!-- -------- END HEADER 4 w/ search book a ticket form ------- -->
+<!--div class="card card-body blur shadow-blur mx-3 mx-md-4 mt-n6 mb-4"-->
+    <!-- START Testimonials w/ user image & text & info -->
+    <!--section class="py-sm-7 py-5 position-relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto">
+                    <div class="mt-n8 mt-md-n9 text-center">
+                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="assets/img/{{profilPicture}}" alt="bruce" loading="lazy">
+                    </div>
+                    <div class="row py-5">
+                        <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="mb-0">{{currentUser.username}}</h3>
+                            </div>
+                            <div class="row mb-4"-->
+                                <!--div class="col-auto">
+                                    <span class="h6">{{myPosts.length}}</span>
+                                    <span>Posts</span>
+                                </div>
+                                <div class="col-auto">
+                                    <span class="h6">{{friendList.length}}</span>
+                                    <span><a data-bs-toggle="modal" data-bs-target="#friendsModal" style="cursor:pointer;">Friends</a></span>
+                                </div>
+                                <div class="col-auto">
+                                    <span class="h6">2</span>
+                                    <span>Joined Courses</span>
+                                </div>
+                                <div class="col-auto" *ngIf="currentUser.role == 'ASSOCIATION'">
+                                    <span class="h6">0</span>
+                                    <span>Events created</span>
+                                </div>
+                                <div class="col-auto" *ngIf="currentUser.role == 'COMPANY'">
+                                    <span class="h6">0</span>
+                                    <span>Job offers</span>
+                                </div-->
+
+                            <!--/div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-sm-0 mt-2">
+                <div class="col-lg-3 col-md-4 position-relative ms-lg-auto">
+                    <div class="p-3 text-center border-right-after">
+                        <i class="material-icons text-gradient text-primary text-5xl mb-3">email</i>
+                        <h6 class="mb-0">Email</h6>
+                        <p class="text-dark font-weight-normal"><a href="https://demos.creative-tim.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3159545d5d5e7152435450455847541c45585c1f525e5c">{{currentUser.email}}</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 position-relative">
+                    <div class="p-3 text-center border-right-after">
+                        <i class="material-icons text-gradient text-primary text-5xl mb-3">call</i>
+                        <h6 class="mb-0">Phone</h6-->
+                        <!--p class="text-dark font-weight-normal">+216 {{currentUser.phoneNumber}}</p-->
+                    <!--/div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 position-relative">
+                    <div class="p-3 text-center border-right-after">
+                        <i class="material-icons text-gradient text-primary text-5xl mb-3">location_city</i>
+                        <h6 class="mb-0">Adress</h6-->
+                        <!--p class="text-dark font-weight-normal">{{currentUser.address}}</p-->
+                    <!--/div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 me-lg-auto">
+                    <div class="p-3 text-center">
+                        <i class="material-icons text-gradient text-primary text-5xl mb-3">contacts</i>
+                        <h6 class="mb-0">Contact</h6>
+                        <p class="text-dark font-weight-normal">{{currentUser.username}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section-->
+    <!-- END Testimonials w/ user image & text & info -->
+
+    <!--section class="py-3">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-background align-items-start h-100">
+                        <div class="full-background" style="background-image: url(https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/beach.jpg)"></div>
+                        <div class="card-body text-center z-index-3">
+                            <p class="text-uppercase font-weight-bold opacity-8 text-xs mt-5">New</p>
+                            <h4 class="text-white mb-1">Subscriptions</h4>
+                            <p class="text-white opacity-8">Not subscribed yet ? Check our subscription offers and benefit from the various premium functionalities of our platform !</p>
+                            <p class="text-white opacity-8">Follow the link below to manage your subscriptions</p>
+                            <button class="btn btn-white btn-sm" type="button" name="button" routerLink="/subscribe">Check it out</button>
+                        </div>
+                        <span class="mask bg-gradient-primary border-radius-xl z-index-2 opacity-7"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex flex-column">
+                    <div class="card h-100 card-background align-items-start">
+                        <div class="full-background" style="background-image: url(&#39;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/indian.jpg&#39;)"></div>
+                        <div class="card-body z-index-3">
+                            <i class="material-icons text-white text-3xl">forum</i>
+                        </div>
+                        <div class="card-footer pb-3 pt-2 z-index-3">
+                            <a class="text-white mb-1 cursor-pointer" routerLink="/forum">Forums</a-->
+                            <!--p class="text-white text-xs font-weight-bolder text-uppercase opacity-7">{{allPosts.length}} posts</p-->
+                        <!--/div>
+                        <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-6"></span>
+                    </div>
+                    <div class="card h-100 card-background mt-4 align-items-start">
+                        <div class="full-background" style="background-image: url(&#39;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/greece.jpg&#39;)"></div>
+                        <div class="card-body z-index-3">
+                            <i class="material-icons text-white text-3xl">volunteer_activism</i>
+                        </div>
+                        <div class="card-footer pb-3 pt-2 z-index-3">
+                            <a class="text-white mb-1 cursor-pointer" routerLink="/eventFront">Events</a-->
+                            <!--p class="text-white text-xs font-weight-bolder text-uppercase opacity-7">{{allEvents.length}} events</p-->
+                        <!--/div>
+                        <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-6"></span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 d-flex flex-column">
+                    <div class="card card-background align-items-start">
+                        <div class="full-background" style="background-image: url(&#39;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/city.jpg&#39;)"></div>
+                        <div class="card-body z-index-3">
+                            <i class="material-icons text-white text-3xl">work</i>
+                        </div>
+                        <div class="card-footer pb-3 pt-5 z-index-3">
+                            <a class="text-white mb-1 cursor-pointer" routerLink="/chatP">Start Chat</a>
+                            <p class="text-white text-xs font-weight-bolder text-uppercase opacity-7">117 offers</p>
+                        </div>
+                        <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-6"></span>
+                    </div>
+                    <div class="card card-background mt-4 align-items-start">
+                        <div class="full-background" style="background-image: url(&#39;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/laught.jpg&#39;)"></div>
+                        <div class="card-body z-index-3">
+                            <i class="material-icons text-white text-3xl">cast_for_education</i>
+                        </div>
+                        <div class="card-footer pb-3 pt-2 z-index-3">
+                            <a class="text-white mb-1 cursor-pointer" routerLink="/cour">Courses</a-->
+                            <!--p class="text-white text-xs font-weight-bolder text-uppercase opacity-7">{{allCourses.length}} courses</p-->
+                        <!--/div>
+                        <span class="mask bg-gradient-dark border-radius-xl z-index-2 opacity-6"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section-->
+
+
+    <!-- START Blogs w/ 4 cards w/ image & text & link -->
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-5">Friend Suggestion</h3>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" *ngFor="let friend of friendSuggestionList">
+                    <div class="card card-plain">
+                        <div class="card-header p-0 position-relative">
+                            <a class="d-block blur-shadow-image">
+                                <img src="assets/img/{{friend.profilPic}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy" width="300">
+                            </a>
+                        </div>
+                        <div class="card-body px-0">
+                            <h5>
+                                <p class="text-dark font-weight-bold">{{friend.username}}</p>
+                                <p class="text-dark font-weight-bold">{{friend.email}}</p>
+                            </h5>
+                            <!--a class="text-info text-sm icon-move-right" data-bs-toggle="modal" data-bs-target="#commonFriendsModal" (click)="getFriendsInCommon(friend.userId.toString())" style="cursor: pointer">Check friends in common
+                                <i class="fas fa-users text-xs ms-1"></i>
+                            </a-->
+                            <br>
+                            <a routerLink="{{friend.id}}" class="text-info text-sm icon-move-right">View Profile
+                                <i class="fas fa-arrow-right text-xs ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!--div class="col-lg-3 col-md-12 col-12">
+                    <div class="card card-blog card-background cursor-pointer">
+                        <div class="full-background" style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy"></div>
+                        <div class="card-body">
+                            <div class="content-left text-start my-auto py-4">
+                                <h2 class="card-title text-white">Want to see more ? </h2>
+                                <p class="card-description text-white">You can check the list of all the suggested friends and start following them ...</p>
+                                <a data-bs-toggle="modal" data-bs-target="#allUsers" class="text-white text-sm icon-move-right">Check it out
+                                    <i class="fas fa-arrow-right text-xs ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div-->
+            </div>
+        </div>
+    </section>
+    <!-- END Blogs w/ 4 cards w/ image & text & link -->
+
+<!-- START Blogs w/ 4 cards w/ image & text & link -->
+<section class="py-3">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-6">
+              <h3 class="mb-5">Friend list</h3>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-3 col-sm-6" *ngFor="let friend of friendList">
+              <div class="card card-plain">
+                  <div class="card-header p-0 position-relative">
+                      <a class="d-block blur-shadow-image">
+                          <img src="assets/img/{{friend.profilPic}}" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy" width="300">
+                      </a>
+                  </div>
+                  <div class="card-body px-0">
+                      <h5>
+                          <p class="text-dark font-weight-bold">{{friend.username}}</p>
+                          <p class="text-dark font-weight-bold">{{friend.email}}</p>
+                      </h5>
+                      <!--a class="text-info text-sm icon-move-right" data-bs-toggle="modal" data-bs-target="#commonFriendsModal" (click)="getFriendsInCommon(friend.userId.toString())" style="cursor: pointer">Check friends in common
+                          <i class="fas fa-users text-xs ms-1"></i>
+                      </a-->
+                      <br>
+                      <a routerLink="{{friend.id}}" class="text-info text-sm icon-move-right">View Profile
+                          <i class="fas fa-arrow-right text-xs ms-1"></i>
+                      </a>
+                  </div>
+              </div>
+          </div>
+
+          <!--div class="col-lg-3 col-md-12 col-12">
+              <div class="card card-blog card-background cursor-pointer">
+                  <div class="full-background" style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy"></div>
+                  <div class="card-body">
+                      <div class="content-left text-start my-auto py-4">
+                          <h2 class="card-title text-white">Want to see more ? </h2>
+                          <p class="card-description text-white">You can check the list of all the suggested friends and start following them ...</p>
+                          <a data-bs-toggle="modal" data-bs-target="#allUsers" class="text-white text-sm icon-move-right">Check it out
+                              <i class="fas fa-arrow-right text-xs ms-1"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div-->
+      </div>
+  </div>
+</section>
+<!-- END Blogs w/ 4 cards w/ image & text & link -->
+
+
+
+
+
+
+
+<!--section class="py-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card box-shadow-xl overflow-hidden mb-5">
+                    <div class="row">
+                        <div class="col-lg-5 position-relative bg-cover px-0" style="background-image: url('../assets/img/examples/blog2.jpg')" loading="lazy">
+                            <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
+                                <div class="mask bg-gradient-dark opacity-8"></div>
+                                <div class="p-5 ps-sm-8 position-relative text-start my-auto z-index-2">
+                                    <h3 class="text-white">Contact Information</h3>
+                                    <p class="text-white opacity-8 mb-4">Fill up the form and our Team will get back to you within 24 hours.</p>
+                                    <div class="d-flex p-2 text-white">
+                                        <div>
+                                            <i class="fas fa-phone text-sm"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <span class="text-sm opacity-8">(+40) 772 100 200</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex p-2 text-white">
+                                        <div>
+                                            <i class="fas fa-envelope text-sm"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <span class="text-sm opacity-8">hello@creative-tim.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex p-2 text-white">
+                                        <div>
+                                            <i class="fas fa-map-marker-alt text-sm"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <span class="text-sm opacity-8">Dyonisie Wolf Bucharest, RO 010458</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Dribbble">
+                                            <i class="fab fa-dribbble"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-icon-only btn-link text-white btn-lg mb-0" data-toggle="tooltip" data-placement="bottom" data-original-title="Log in with Instagram">
+                                            <i class="fab fa-instagram"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <form class="p-3" id="contact-form" method="post">
+                                <div class="card-header px-4 py-sm-5 py-3">
+                                    <h2>Say Hi!</h2>
+                                    <p class="lead"> We'd like to talk with you.</p>
+                                </div>
+                                <div class="card-body pt-1">
+                                    <div class="row">
+                                        <div class="col-md-12 pe-2 mb-3">
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>My name is</label>
+                                                <input type="text" class="form-control" placeholder="Full Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pe-2 mb-3">
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>I'm looking for</label>
+                                                <input type="text" class="form-control" placeholder="What you love">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 pe-2 mb-3">
+                                            <div class="input-group input-group-static mb-4">
+                                                <label>Your message</label>
+                                                <textarea name="message" class="form-control" id="message" rows="6" placeholder="I want to say that..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 text-end ms-auto">
+                                            <button type="submit" class="btn bg-gradient-info mb-0">Send Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section-->
+
+
+
+<!-- Friends Modal -->
+<div class="modal fade" id="friendsModal" tabindex="-1" aria-labelledby="friendsModal" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="friendsModalLabel">Friend List</h5>
+            </div>
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0" *ngIf="friendList.length != 0">
+                                <tbody *ngFor="let friend of friendList; let i=index ">
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-0">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle">
+                                            <img alt="Image placeholder" src="assets/img/{{friend.profilPic}}" width="40" height="25"> &nbsp;
+                                        </a>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">&nbsp;{{friend.username}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <!--a routerLink="/profil/{{friend.id}}" (click)="navigateTo(friend.id!.toString())" class="text-xs icon-move-left" style="cursor:pointer;">Check Profil
+                                        <i class="fas fa-arrow-left text-sm ms-1"></i></a-->
+                                </td>
+                            </tr>
+                                </tbody>
+                        </table>
+
+                        <table class="table align-items-center mb-0" *ngIf="friendList.length == 0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span>You don't have any friends at the moment</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Big Screen Notifications-->
+<div class="d-none d-lg-block">
+  <ul class="list-group">
+      <li class="nav-item list-group-item border-0 p-0" *ngFor="let notif of notificationList">
+
+          <span class="dropdown-item py-2 ps-3 border-radius-md" >
+
+              <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-center align-items-center p-0"><i class="fa fa-circle fa-xs me-3 mt-3" style="color: #1770e6" *ngIf="!notif.read"></i>{{notif.message}}</h6>
+              <span class="text-sm ms-4">{{notif.createdAt}} <i class="fa fa-clock ms-1"></i>
+                  <a (click)="markAsRead(notif.notificationId)" *ngIf="!notif.read"><i class="fa fa-eye ms-5 me-2"></i>Mark as read</a>
+                  <a (click)="markAsUnRead(notif.notificationId)" *ngIf="notif.read"><i class="fa fa-eye-slash ms-5 me-2"></i>Mark as Unread</a>
+              </span>
+
+          </span>
+      </li>
+
+  </ul>
+</div>
+<!--Big Screen Notifications-->
+
+
+<!--Small Screen Notifications-->
+<div class="row d-lg-none">
+  <div class="col-md-12 g-0">
+      <a class="dropdown-item py-2 ps-3 border-radius-md" *ngFor="let notif of notificationList">
+          <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">{{notif.message}}</h6>
+          <i class="material-icons opacity-6 me-2">access_alarm</i>
+          <span class="text-sm">{{notif.createdAt}}</span>
+      </a>
+  </div>
+</div>
+<!--Small Screen Notifications-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="commonFriendsModal" tabindex="-1" aria-labelledby="commonFriendsModal" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="friendsModalLabel">Friends in common</h5>
+            </div>
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0" *ngIf="friendList.length != 0">
+                            <tbody *ngFor="let friend of friendInCommon; let i=index ">
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-0">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle">
+                                            <img alt="Image placeholder" src="assets/img/{{friend.profilPic}}" width="40" height="25"> &nbsp;
+                                        </a>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">&nbsp;{{friend.username}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <a class="text-xs icon-move-left" style="cursor:pointer;">Check Profil
+                                        <i class="fas fa-arrow-left text-sm ms-1"></i></a>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <a class="text-xs icon-move-left" style="cursor:pointer;">
+                                        <i class="fas fa-user-slash text-sm ms-1"></i>
+                                        Unfriend</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table align-items-center mb-0" *ngIf="friendList.length == 0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span>You don't have any friends at the moment</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="allUsers" tabindex="-1" aria-labelledby="commonFriendsModal" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="allUsersLabel">Get in touch with others users</h5>
+            </div>
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0">
+                            <tbody *ngFor="let friend of allUsers; let i=index ">
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-0">
+                                        <a href="javascript:;" class="avatar avatar-xs rounded-circle">
+                                            <img alt="Image placeholder" src="assets/img/{{friend.profilPic}}" width="40" height="25"> &nbsp;
+                                        </a>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">&nbsp;{{friend.username}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <!--a class="text-xs icon-move-left" style="cursor:pointer;" (click)="navigateTo(friend.id.toString())">Check Profil
+                                        <i class="fas fa-arrow-left text-sm ms-1"></i></a-->
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table align-items-center mb-0" *ngIf="allUsers.length == 0">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span>No users to display at the moment</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+                  
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+ </main>

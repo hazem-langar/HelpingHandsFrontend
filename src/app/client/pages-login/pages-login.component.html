@@ -1,0 +1,213 @@
+<!--main>
+  <a routerLink="/client" class="text-info text-sm icon-move-right">Home
+    <i class="fas fa-arrow-right text-xs ms-1"></i>
+</a>
+  
+    <div class="container">
+      
+       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        
+          <div class="container">
+             <div class="row justify-content-center"-->
+                <!--div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                   <div class="d-flex justify-content-center py-4"> <a routerLink="/" class="logo d-flex align-items-center w-auto"> <img src="assets/img/logo.png" alt=""> <span class="d-none d-lg-block">Admin</span> </a></div>
+                   <div class="card mb-3">
+                      <div class="card-body">
+                         <div class="pt-4 pb-2">
+                            <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                            <p class="text-center small">Enter your username & password to login</p>
+                         </div>
+                         <form class="row g-3 needs-validation" novalidate>
+                            <div class="col-12">
+                               <label for="yourUsername" class="form-label">Username</label>
+                               <div class="input-group has-validation">
+                                  <span class="input-group-text" id="inputGroupPrepend">@</span> <input type="text" name="username" class="form-control" id="yourUsername" required>
+                                  <div class="invalid-feedback">Please enter your username.</div>
+                               </div>
+                            </div>
+                            <div class="col-12">
+                               <label for="yourPassword" class="form-label">Password</label> <input type="password" name="password" class="form-control" id="yourPassword" required>
+                               <div class="invalid-feedback">Please enter your password!</div>
+                            </div>
+                            <div class="col-12">
+                               <div class="form-check"> <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe"> <label class="form-check-label" for="rememberMe">Remember me</label></div>
+                            </div>
+                            <div class="col-12"> <button class="btn btn-primary w-100" type="submit">Login</button></div>
+                            <div class="col-12">
+                               <p class="small mb-0">Don't have account? <a routerLink="/pages-register">Create an account</a></p>
+                            </div>
+                         </form>
+                      </div>
+                   </div>
+                   <div class="credits"> Loved by <a href="https://freeetemplates.com/">FreeeTemplates</a></div>
+                </div-->
+                <!--div class="col-md-12">
+                  
+                  
+                    
+                     <form
+                      *ngIf="!isLoggedIn"
+                      name="form"
+                      (ngSubmit)="f.form.valid && onSubmit()"
+                      #f="ngForm"
+                      novalidate
+                    >
+                      <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="username"
+                          [(ngModel)]="form.username"
+                          required
+                          #username="ngModel"
+                        />
+                        <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && username.invalid"
+                        >
+                          Username is required!
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          name="password"
+                          [(ngModel)]="form.password"
+                          required
+                          minlength="6"
+                          #password="ngModel"
+                        />
+                        <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && password.invalid"
+                        >
+                          <div *ngIf="password.hasError('required')">Password is required</div>
+                          <div *ngIf="password.hasError('minlength')">
+                            Password must be at least 6 characters
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <button class="btn btn-primary btn-block">
+                          Login
+                        </button>
+                        <div class="d-block">
+                                    <button type="button" routerLink="/forgetpassword" class="btn btn-primary btn-block">forget password</button>
+                                </div>
+                      </div>
+                      <div class="form-group">
+                        <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && isLoginFailed"
+                        >
+                          Login failed: {{ errorMessage }}
+                        </div>
+                      </div>
+                    </form>
+                
+                    <div class="alert alert-success" *ngIf="isLoggedIn">
+                      Logged in as {{ roles }}
+                    </div>
+                    <li class="nav-item">
+                      <a href class="nav-link" (click)="logout()">LogOut</a>
+                      
+                    </li>
+                  </div>
+                </div>
+             </div>
+          
+       </section>
+    </div>
+ </main-->
+ <div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back!</h3>
+
+              <!-- Sign In Form -->
+              <form *ngIf="!isLoggedIn"
+              name="form"
+              (ngSubmit)="f.form.valid && onSubmit()"
+              #f="ngForm"
+              novalidate>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" name="username"
+                  [(ngModel)]="form.username"
+                  required
+                  #username="ngModel" >
+                  <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && username.invalid"
+                        >
+                          Username is required!
+                        </div>
+
+                  <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+                  [(ngModel)]="form.password"
+                  required
+                  minlength="6"
+                  #password="ngModel" >
+                  <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && password.invalid"
+                        >
+                          <div *ngIf="password.hasError('required')">Password is required</div>
+                          <div *ngIf="password.hasError('minlength')">
+                            Password must be at least 6 characters
+                          </div>
+                        </div>
+                  
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                  <label class="form-check-label" for="rememberPasswordCheck">
+                    Remember password
+                  </label>
+                </div>
+
+                <div class="d-grid">
+                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in</button>
+                  <div
+                          class="alert alert-danger"
+                          role="alert"
+                          *ngIf="f.submitted && isLoginFailed"
+                        >
+                          Login failed: {{ errorMessage }}
+                        </div>
+                  <div class="text-center">
+                    <a class="small" routerLink="/forgetpassword">Forgot password?</a>
+                  </div>
+                </div>
+
+              </form>
+              <div class="alert alert-success" *ngIf="isLoggedIn">
+                Logged in as {{ roles }}
+              </div>
+              <li class="nav-item">
+                <a  class="nav-link" (click)="logout()">LogOut</a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
